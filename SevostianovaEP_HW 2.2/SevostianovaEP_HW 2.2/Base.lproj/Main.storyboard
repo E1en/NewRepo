@@ -90,7 +90,10 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="light"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="light"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="zgH-Ij-vC8"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6gg-wv-tFg">
                                 <rect key="frame" x="319" y="243" width="40" height="30"/>
@@ -100,7 +103,10 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="light"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ptE-Dl-aqe"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dwl-do-5et">
                                 <rect key="frame" x="319" y="288" width="40" height="30"/>
@@ -110,7 +116,10 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="light"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="m6n-xG-daz"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -157,18 +166,18 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="labelBlue" destination="B0h-3r-ELq" id="7XQ-Vm-r3H"/>
+                        <outlet property="labelGreen" destination="cFg-MX-WcN" id="x9y-DU-qZP"/>
+                        <outlet property="labelRed" destination="uXs-za-URp" id="7mp-Td-rvo"/>
                         <outlet property="numberBlue" destination="PST-9T-b6O" id="pBR-n7-tCL"/>
                         <outlet property="numberGreen" destination="jbw-FX-Lcn" id="lZs-qh-Jc5"/>
                         <outlet property="numberRed" destination="k2c-9e-Qup" id="UXS-Jb-FkM"/>
                         <outlet property="sliderBlue" destination="YDb-Qa-AXN" id="Y6M-1N-jn4"/>
                         <outlet property="sliderGreen" destination="mo7-Yc-LRw" id="C6a-Vw-l2H"/>
                         <outlet property="sliderRed" destination="cc6-X6-xZo" id="4SQ-9i-ZnK"/>
-                        <outlet property="textBlue" destination="Dwl-do-5et" id="4rT-sd-LDn"/>
                         <outlet property="textFieldBlue" destination="Dwl-do-5et" id="IDB-gy-StC"/>
                         <outlet property="textFieldGreen" destination="6gg-wv-tFg" id="Ptn-rX-SKt"/>
                         <outlet property="textFieldRed" destination="O7S-gJ-nxf" id="Jcr-30-zfz"/>
-                        <outlet property="textGreen" destination="6gg-wv-tFg" id="eCF-0O-rua"/>
-                        <outlet property="textRed" destination="O7S-gJ-nxf" id="MDa-Nk-0p9"/>
                         <outlet property="viewColor" destination="R3Q-mM-jdp" id="Cp6-hy-dWl"/>
                     </connections>
                 </viewController>

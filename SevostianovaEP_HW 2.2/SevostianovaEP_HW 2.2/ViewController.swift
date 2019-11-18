@@ -8,16 +8,19 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
+    
+    
     
     @IBOutlet var viewColor: UIView!
     
     
-    @IBOutlet weak var textRed: UITextField!
-    @IBOutlet weak var textGreen: UITextField!
-    @IBOutlet weak var textBlue: UITextField!
-    
   
+    @IBOutlet weak var labelRed: UILabel!
+    @IBOutlet weak var labelGreen: UILabel!
+    @IBOutlet weak var labelBlue: UILabel!
+    
+    
     @IBOutlet var numberRed: UILabel!
     @IBOutlet var numberGreen: UILabel!
     @IBOutlet var numberBlue: UILabel!
@@ -49,49 +52,10 @@ class ViewController: UIViewController {
         }
     }
     
-    
-    
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-      var sliderRed: UISlider!{
-            didSet{
-                sliderRed.tintColor  = UIColor.red
-            }
-            
-        }
-        
-        var sliderGreen: UISlider!{
-            didSet{
-                sliderGreen.tintColor  = UIColor.red
-                
-            }
-        }
-        
-       var sliderBlue: UISlider!{
-            didSet{
-                sliderBlue.tintColor  = UIColor.red
-                
-            }
-        }
-        
-
-        //text
-        textRed.text = "Red"
-        textGreen.text = "Green"
-        textBlue.text = "Blue"
-        
-        
-      
-        
-    }
-    
     @IBAction func redSliderAction(_ sender: UISlider) {
         numberRed.text = String(Int(sender.value))
         textFieldRed.text = String(Int(sender.value))
-        sliderRed.minimumValue = 0
-        sliderRed.maximumValue = 255
+       
         
         
     }
@@ -99,17 +63,60 @@ class ViewController: UIViewController {
     @IBAction func greenSliderAction(_ sender: UISlider) {
         numberGreen.text = String(Int(sender.value))
         textFieldGreen.text = String(Int(sender.value))
-        sliderGreen.minimumValue = 0
-        sliderGreen.maximumValue = 255
+      
     }
     
     
     @IBAction func blueSliderAction(_ sender: UISlider) {
         numberBlue.text = String(Int(sender.value))
         textFieldBlue.text = String(Int(sender.value))
+        
+    }
+    
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == self.textFieldRed {
+            numberRed.text = textFieldRed.text
+            sliderRed.value = Float(textFieldRed.text) ?? 0
+        } else if textField == self.textFieldGreen {
+            numberGreen.text = textFieldGreen.text
+            sliderRed.value = Float(textFieldGreen.text) ?? 0
+        } else if textField == self.textFieldBlue {
+           numberBlue.text = textFieldBlue.text
+            sliderRed.value = Float(textFieldGreen.text) ?? 0
+        
+        textField.resignFirstResponder()
+        return true
+    }
+    changeColor()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+     
+  
+    
+
+
+        //text
+        labelRed.text = "Red"
+        labelGreen.text = "Green"
+        labelBlue.text = "Blue"
+        
+        sliderRed.minimumValue = 0
+        sliderRed.maximumValue = 255
+        
+        sliderGreen.minimumValue = 0
+        sliderGreen.maximumValue = 255
+        
         sliderBlue.minimumValue = 0
         sliderBlue.maximumValue = 255
+        
+        
+      
+        
     }
+    
     
     
     
